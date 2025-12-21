@@ -3,49 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Jonish Gurung Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Jonish Gurung</h1>
-        <p>BIT 3rd A Student</p>
-    </header>
+    <!--NavBar-->
+    <nav>
+        <div class="left">
+            <a href="/">Jonish Gurung</a>
+        </div>
+        <div class="right">
+            <a href="http://github.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+            </a>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hello! I am Jonish Gurung, a BIT student passionate about learning web development.
-            I am currently building my skills in HTML, CSS, and GitHub by creating small projects.
-        </p>
-    </section>
+                <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>
 
-    <section id="skills">    
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML (Beginner)</li>
-        <li>CSS (Beginner)</li>
-        <li>Git & GitHub</li>
-        <li>VS Code</li>
-    </ul>
-    </section>
+                <a href="mailto:i.jonish.gurung@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
 
-    <section id="resume">
-    <h2>Resume</h2>
-    <p>
-        <a href="resume.pdf" target="_blank">View My Resume</a>
-        (Will be updated as I gain more experience)
-    </p>
-    </section>
+    </nav>
 
-    <section id="projects">
-        <h2>Projects</h2>
-    <p>Currently working on beginner projects.</p>
-    <a href="#">Coming Soon</a>
-    </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: i.jonish.gurung@gmail.com</p>
-    </section>
+    <main>
+        <!--Section 1: Myinfo-->
+        <section class="Myinfo-section">
+            <div class="text">
+                <h2>Hi, I'm Jonish</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, impedit? Velit quibusdam officia distinctio saepe, inventore facere iusto quo, deleniti porro voluptatem necessitatibus laboriosam quos fuga ut cumque numquam accusantium incidunt atque commodi quas. Facere vel deleniti tempore, inventore quia labore unde? Omnis blanditiis cum quos ipsa odit consequuntur tempora.</p>
+                <div class="links">
+                    <a href="#Skills">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skills</span>
+                    </a>
+                    
+                    <a href="#Resume">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Resume</span>
+                    </a>
+                    
+                    <a href="Contact">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            <div class="headshot">
+                <img src="myimage.webp" alt="Jonish Gurung">
+            </div>
+        </section>
+
+             <!--Section 2: Skills-->
+        <section id="Skills"></section>
+
+             <!--Section 3: Resume-->
+        <section id="Resume"></section>
+
+             <!--Section 4: Contact-->
+        <section id="Contact"></section>
+    </main>
 </body>
 </html>
