@@ -1,11 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="style.css">
+  <title>Portfolio</title>
 </head>
 <body>
-    
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left">
+      <a href="/">Jonish Gurung</a>
+    </div>
+    <div class="right">
+      <a href="http://github.com/Jonishgrg" target="_blank">
+        <i class="fa-brands fa-github"></i><span>Github</span>
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=i.jonish.gurung@gmail.com" target="_blank">
+        <i class="fa-solid fa-envelope"></i><span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="headshot">
+        <img src="image/myimage-head.webp" alt="Jonis headshot">
+      </div>
+      <div class="text">
+        <h2>Hi, I'm Jonish Gurung</h2>
+        <p>A BIT student exploring the vast world of technology.</p>
+        <div class="links">
+          <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+          <a href="#projects"><i class="fa-folder-open"></i> Projects</a>
+          <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+      <div class="cells">
+        <div class="cell"><img src="image/html.webp" alt="html logo"><span>HTML</span></div>
+        <div class="cell"><img src="image/css.webp" alt="css logo"><span>CSS</span></div>
+        <div class="cell"><img src="image/javascript.webp" alt="javascript logo"><span>JavaScript</span></div>
+        <div class="cell"><img src="image/node-logo.webp" alt="node logo"><span>Node.js</span></div>
+        <div class="cell"><img src="image/react-logo.webp" alt="react logo"><span>React.js</span></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects-section">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>Personal portfolio built using HTML, CSS, and JavaScript.</p>
+          <a href="#">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Order Notification System</h3>
+          <p>Node.js backend system for order status updates.</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+      <div class="group">
+        <div class="text">Lorem ipsum dolor sit amet...</div>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" cols="30" rows="10" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mouse Trail -->
+  <div id="mouse-trail-container"></div>
+  <script src="js/mouse-trail.js"></script>
+
+  <!-- Contact form script -->
+  <script>
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      try {
+        const res = await fetch("http://localhost:3000/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        const data = await res.json();
+        if (data.success) alert("Message sent!");
+        else alert("Error sending message");
+      } catch (err) {
+        console.log(err);
+        alert("Error sending message");
+      }
+
+      form.reset();
+    });
+  </script>
 </body>
 </html>
