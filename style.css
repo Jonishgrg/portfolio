@@ -277,7 +277,7 @@ nav .right a span {
 }
 
 /* MOUSE TRAIL EFFECT */
-#mouse-trail-container {
+#mouse-trail-canvas {
   position: fixed;
   top: 0;
   left: 0;
@@ -286,20 +286,6 @@ nav .right a span {
   width: 100vw;
   height: 100vh;
 }
-
-.trail-dot {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: var(--link-color);
-  border-radius: 50%;
-  opacity: 0.8;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  mix-blend-mode: lighten;
-  transition: transform 0.1s linear, opacity 0.2s linear;
-}
-
 
 @media (max-width: 850px) {
   /* SECTION 1: Hero */
