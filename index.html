@@ -41,7 +41,7 @@
         <p>A BIT student exploring the vast world of technology.</p>
         <div class="links">
           <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
-          <a href="#projects"><i class="fa-folder-open"></i> Projects</a>
+          <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
           <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
         </div>
       </div>
@@ -82,15 +82,18 @@
       <h2>Contact</h2>
       <div class="group">
         <div class="text">For inquiries or project proposals, please fill out the form.</div>
-        <form id="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" required>
-          <label for="email">Email</label>
-          <input type="email" id="email" required>
-          <label for="message">Message</label>
-          <textarea id="message" cols="30" rows="10" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+          <form id="contact-form" action="/submit" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
       </div>
     </section>
   </main>
